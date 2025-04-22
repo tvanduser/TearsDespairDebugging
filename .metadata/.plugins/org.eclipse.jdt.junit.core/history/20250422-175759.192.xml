@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RowTest" project="SP2025_CS3330_HW4_G0" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="hw4.maze.test.RowTest" time="0.092" displayname="RowTest" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]">
+    <testcase name="testSetCellsWithNull" classname="hw4.maze.test.RowTest" time="0.024" displayname="testSetCellsWithNull()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[method:testSetCellsWithNull()]"/>
+    <testcase name="testGetCellsSize" classname="hw4.maze.test.RowTest" time="0.001" displayname="testGetCellsSize()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[method:testGetCellsSize()]"/>
+    <testcase name="testToString" classname="hw4.maze.test.RowTest" time="0.009" displayname="testToString()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[method:testToString()]"/>
+    <testsuite name="testGetCell(hw4.maze.test.RowTest)" time="0.008" displayname="testGetCell(Cell, Cell)" parameters="hw4.maze.Cell,hw4.maze.Cell" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[test-template:testGetCell(hw4.maze.Cell, hw4.maze.Cell)]">
+      <testcase name="testGetCell" classname="hw4.maze.test.RowTest" time="0.008" dynamicTest="true" displayname="[1] Cell [left=EXIT, right=APERTURE, up=WALL, down=APERTURE], Cell [left=EXIT, right=APERTURE, up=WALL, down=APERTURE]" parameters="hw4.maze.Cell,hw4.maze.Cell" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[test-template:testGetCell(hw4.maze.Cell, hw4.maze.Cell)]/[test-template-invocation:#1]"/>
+      <testcase name="testGetCell" classname="hw4.maze.test.RowTest" time="0.002" dynamicTest="true" displayname="[2] Cell [left=APERTURE, right=WALL, up=WALL, down=APERTURE], Cell [left=APERTURE, right=WALL, up=WALL, down=APERTURE]" parameters="hw4.maze.Cell,hw4.maze.Cell" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[test-template:testGetCell(hw4.maze.Cell, hw4.maze.Cell)]/[test-template-invocation:#2]"/>
+      <testcase name="testGetCell" classname="hw4.maze.test.RowTest" time="0.001" dynamicTest="true" displayname="[3] Cell [left=WALL, right=WALL, up=WALL, down=APERTURE], Cell [left=WALL, right=WALL, up=WALL, down=APERTURE]" parameters="hw4.maze.Cell,hw4.maze.Cell" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[test-template:testGetCell(hw4.maze.Cell, hw4.maze.Cell)]/[test-template-invocation:#3]"/>
+    </testsuite>
+    <testcase name="testSetCell" classname="hw4.maze.test.RowTest" time="0.001" displayname="testSetCell()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.RowTest]/[method:testSetCell()]"/>
+  </testsuite>
+</testrun>

@@ -77,7 +77,7 @@ class GridTest {
 		rowList = rows;
 		grid = new Grid(rows);
 	}
-	
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 	}
@@ -101,7 +101,7 @@ class GridTest {
 		assertEquals(null, grid.getRows());
 	}
 	
-	@Test
+	@Test 
 	void testToString() {
 		
 		assertEquals("Grid [rows=["
