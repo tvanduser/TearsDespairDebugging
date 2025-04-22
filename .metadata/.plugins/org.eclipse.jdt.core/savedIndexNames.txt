@@ -1,0 +1,19 @@
+INDEX VERSION 1.134+C:\Users\78tmo\Documents\code\spring25\OOPS\TDD\SP2025_CS3330_HW4_G0\.metadata\.plugins\org.eclipse.jdt.core
+1549693243.index
+1255032980.index
+1865797976.index
+1934837336.index
+1032339839.index
+4149882823.index
+571222224.index
+1881794121.index
+3587920367.index
+4092517566.index
+2274574483.index
+405981806.index
+3956272871.index
+2253994963.index
+2203724739.index
+2483035412.index
+2545935935.index
+1956294706.index
