@@ -1,0 +1,7 @@
+package hw4.main.maze;
+
+public enum MazeParts {
+	WALL,
+	APERATURE,
+	EXIT
+}
