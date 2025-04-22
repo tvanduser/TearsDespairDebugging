@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CellTest" project="SP2025_CS3330_HW4_G0" tests="13" started="13" failures="2" errors="0" ignored="0">
+  <testsuite name="hw4.maze.test.CellTest" time="0.102" displayname="CellTest" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]">
+    <testcase name="testSetRightWithValidCellComponent" classname="hw4.maze.test.CellTest" time="0.018" displayname="testSetRightWithValidCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetRightWithValidCellComponent()]"/>
+    <testcase name="testToString" classname="hw4.maze.test.CellTest" time="0.006" displayname="testToString()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testToString()]"/>
+    <testcase name="testSetRightWithNullCellComponent" classname="hw4.maze.test.CellTest" time="0.0" displayname="testSetRightWithNullCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetRightWithNullCellComponent()]"/>
+    <testcase name="testSetDownWithNullCellComponent" classname="hw4.maze.test.CellTest" time="0.001" displayname="testSetDownWithNullCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetDownWithNullCellComponent()]"/>
+    <testcase name="testSetUpWithNullCellComponent" classname="hw4.maze.test.CellTest" time="0.011" displayname="testSetUpWithNullCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetUpWithNullCellComponent()]">
+      <failure>
+        <expected>WALL</expected>
+        <actual>APERTURE</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;WALL&gt; but was: &lt;APERTURE&gt;&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)&#13;
+	at SP2025_CS3330_HW4_G0/hw4.maze.test.CellTest.testSetUpWithNullCellComponent(CellTest.java:83)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testsuite name="testGetters(hw4.maze.test.CellTest)" time="0.01" displayname="testGetters(CellComponents, CellComponents)" parameters="hw4.maze.CellComponents,hw4.maze.CellComponents" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[test-template:testGetters(hw4.maze.CellComponents, hw4.maze.CellComponents)]">
+      <testcase name="testGetters" classname="hw4.maze.test.CellTest" time="0.01" dynamicTest="true" displayname="[1] WALL, WALL" parameters="hw4.maze.CellComponents,hw4.maze.CellComponents" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[test-template:testGetters(hw4.maze.CellComponents, hw4.maze.CellComponents)]/[test-template-invocation:#1]"/>
+      <testcase name="testGetters" classname="hw4.maze.test.CellTest" time="0.001" dynamicTest="true" displayname="[2] EXIT, EXIT" parameters="hw4.maze.CellComponents,hw4.maze.CellComponents" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[test-template:testGetters(hw4.maze.CellComponents, hw4.maze.CellComponents)]/[test-template-invocation:#2]"/>
+      <testcase name="testGetters" classname="hw4.maze.test.CellTest" time="0.001" dynamicTest="true" displayname="[3] APERTURE, APERTURE" parameters="hw4.maze.CellComponents,hw4.maze.CellComponents" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[test-template:testGetters(hw4.maze.CellComponents, hw4.maze.CellComponents)]/[test-template-invocation:#3]"/>
+      <testcase name="testGetters" classname="hw4.maze.test.CellTest" time="0.001" dynamicTest="true" displayname="[4] WALL, WALL" parameters="hw4.maze.CellComponents,hw4.maze.CellComponents" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[test-template:testGetters(hw4.maze.CellComponents, hw4.maze.CellComponents)]/[test-template-invocation:#4]"/>
+    </testsuite>
+    <testcase name="testSetLeftWithValidCellComponent" classname="hw4.maze.test.CellTest" time="0.001" displayname="testSetLeftWithValidCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetLeftWithValidCellComponent()]"/>
+    <testcase name="testSetLeftWithNullCellComponent" classname="hw4.maze.test.CellTest" time="0.001" displayname="testSetLeftWithNullCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetLeftWithNullCellComponent()]"/>
+    <testcase name="testSetDownWithValidCellComponent" classname="hw4.maze.test.CellTest" time="0.001" displayname="testSetDownWithValidCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetDownWithValidCellComponent()]"/>
+    <testcase name="testSetUpWithValidCellComponent" classname="hw4.maze.test.CellTest" time="0.001" displayname="testSetUpWithValidCellComponent()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.CellTest]/[method:testSetUpWithValidCellComponent()]">
+      <failure>
+        <expected>WALL</expected>
+        <actual>APERTURE</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;WALL&gt; but was: &lt;APERTURE&gt;&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)&#13;
+	at org.junit.jupiter.api@5.11.3/org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)&#13;
+	at SP2025_CS3330_HW4_G0/hw4.maze.test.CellTest.testSetUpWithValidCellComponent(CellTest.java:73)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>
