@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="GridTest" project="SP2025_CS3330_HW4_G0" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="hw4.maze.test.GridTest" time="0.032" displayname="GridTest" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.GridTest]">
-    <testcase name="testToString" classname="hw4.maze.test.GridTest" time="0.028" displayname="testToString()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.GridTest]/[method:testToString()]"/>
-    <testcase name="testGetGrid" classname="hw4.maze.test.GridTest" time="0.001" displayname="testGetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.GridTest]/[method:testGetGrid()]"/>
-    <testcase name="testSetGrid" classname="hw4.maze.test.GridTest" time="0.002" displayname="testSetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.maze.test.GridTest]/[method:testSetGrid()]"/>
-  </testsuite>
-</testrun>
