@@ -10,12 +10,11 @@ public class Grid {
         this.rows = rows;
 	}
 
-	public Object getRows() {
+	public ArrayList<Row> getRows() {
 		return rows;
 	}
 
 	public void setRows(ArrayList<Row> rows) {
-		// TODO Auto-generated method stub    	
         this.rows = rows; 
 	}
 
