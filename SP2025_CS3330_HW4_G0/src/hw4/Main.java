@@ -17,6 +17,11 @@ public class Main {
 
     
     //---------helper functions------------
+	/**
+     * Prints a message indicating that the player has made a valid move.
+     * This message is used to encourage the player to continue navigating
+     * the maze after successfully making a move that doesn't hit a wall.
+     */
     public static void validMoveMessage(){
         System.out.println("You didn't hit a wall, keep gonig to find your way out of the maze!!!"); 
     }    
