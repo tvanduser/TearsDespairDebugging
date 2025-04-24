@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GameTest" project="SP2025_CS3330_HW4_G0" tests="8" started="0" failures="0" errors="1" ignored="0">
+  <testsuite name="hw4.game.test.GameTest" incomplete="true" displayname="GameTest" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]">
+    <error>java.lang.Error: Unresolved compilation problem: 
+	Syntax error on tokens, delete these tokens
+&#13;
+	at SP2025_CS3330_HW4_G0/hw4.game.Game.&lt;init&gt;(Game.java:223)&#13;
+	at SP2025_CS3330_HW4_G0/hw4.game.test.GameTest.setUpBeforeClass(GameTest.java:33)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+</error>
+    <testcase name="testIfThereIsAnExitOnLeft" classname="hw4.game.test.GameTest" incomplete="true" displayname="testIfThereIsAnExitOnLeft()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testIfThereIsAnExitOnLeft()]"/>
+    <testcase name="testInvalidMovement" classname="hw4.game.test.GameTest" incomplete="true" displayname="testInvalidMovement()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testInvalidMovement()]"/>
+    <testsuite name="testPlay(hw4.game.test.GameTest)" incomplete="true" displayname="testPlay(boolean, boolean)" parameters="boolean,boolean" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testPlay(boolean, boolean)]"/>
+    <testcase name="testToString" classname="hw4.game.test.GameTest" incomplete="true" displayname="testToString()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testToString()]"/>
+    <testcase name="testGetGrid" classname="hw4.game.test.GameTest" incomplete="true" displayname="testGetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testGetGrid()]"/>
+    <testsuite name="testInvalidGridSizeInput(hw4.game.test.GameTest)" incomplete="true" displayname="testInvalidGridSizeInput(Grid, Grid)" parameters="hw4.maze.Grid,hw4.maze.Grid" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testInvalidGridSizeInput(hw4.maze.Grid, hw4.maze.Grid)]"/>
+    <testcase name="testAdjacentCellsSharedCellComponentConsistency" classname="hw4.game.test.GameTest" incomplete="true" displayname="testAdjacentCellsSharedCellComponentConsistency()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testAdjacentCellsSharedCellComponentConsistency()]"/>
+    <testcase name="testInvalidNullPlayer" classname="hw4.game.test.GameTest" incomplete="true" displayname="testInvalidNullPlayer()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testInvalidNullPlayer()]"/>
+    <testcase name="testSetGrid" classname="hw4.game.test.GameTest" incomplete="true" displayname="testSetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testSetGrid()]"/>
+    <testcase name="testIfThereIsOnlyOneExitOnLeft" classname="hw4.game.test.GameTest" incomplete="true" displayname="testIfThereIsOnlyOneExitOnLeft()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testIfThereIsOnlyOneExitOnLeft()]"/>
+  </testsuite>
+</testrun>

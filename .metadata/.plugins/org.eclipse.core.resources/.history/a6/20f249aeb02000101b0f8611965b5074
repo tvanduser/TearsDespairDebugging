@@ -136,7 +136,7 @@ public class Game {
                 //return new position success or fail
                 return movePlayer(player, currentRow, rightCell);
 
-            default: 
+            default:
                 return false;
         }
 	}
@@ -149,32 +149,31 @@ public class Game {
 
 		ArrayList<Row> rows = new ArrayList<>();
 		ArrayList<ArrayList<Cell>> allCells = new ArrayList<>();
+		Random rand = new Random();
 
 		for (int i = 0; i < gridSize; i++) {
 			ArrayList<Cell> rowCells = new ArrayList<>();
 			for (int j = 0; j < gridSize; j++) {
-				// Initialize all sides to WALL as default
 				CellComponents left, right, up, down;
 
-				// Left: wall on far left, else share with previous cell's right
-				if (j == 0) {
-					left = CellComponents.WALL;
-				} else {
-					left = rowCells.get(j - 1).getRight();
+				// Shared walls with neighbors
+				left = (j == 0) ? CellComponents.WALL : rowCells.get(j - 1).getRight();
+				up = (i == 0) ? CellComponents.WALL : allCells.get(i - 1).get(j).getDown();
+
+				// Placeholder values for right and down
+				right = (j == gridSize - 1) ? CellComponents.WALL : (rand.nextBoolean() ? CellComponents.WALL : CellComponents.APERTURE);
+				down = (i == gridSize - 1) ? CellComponents.WALL : (rand.nextBoolean() ? CellComponents.WALL : CellComponents.APERTURE);
+
+				// Ensure at least one aperture if all are walls
+				if (left == CellComponents.WALL && right == CellComponents.WALL &&
+					up == CellComponents.WALL && down == CellComponents.WALL) {
+					switch (rand.nextInt(4)) {
+						case 0: if (j != 0) left = CellComponents.APERTURE; break;
+						case 1: if (j != gridSize - 1) right = CellComponents.APERTURE; break;
+						case 2: if (i != 0) up = CellComponents.APERTURE; break;
+						case 3: if (i != gridSize - 1) down = CellComponents.APERTURE; break;
+					}
 				}
-
-				// Up: wall on top row, else share with cell above's down
-				if (i == 0) {
-					up = CellComponents.WALL;
-				} else {
-					up = allCells.get(i - 1).get(j).getDown();
-				}
-
-				// Right: wall on far right, else new placeholder (will be shared with next cell's left)
-				right = (j == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
-
-				// Down: wall on bottom, else new placeholder (will be shared with next row's up)
-				down = (i == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
 
 				rowCells.add(new Cell(left, right, up, down));
 			}
@@ -182,53 +181,19 @@ public class Game {
 			rows.add(new Row(rowCells));
 		}
 
-        // Add the exit to a random spot on the left
-        int randomRow = new Random().nextInt(gridSize);
-        for (int i = 0; i < gridSize; i++) {
-            Cell leftCell = rows.get(i).getCells().get(0);
-            if (i == randomRow) {
-                leftCell.setLeft(CellComponents.EXIT);
-            } else {
-                leftCell.setLeft(CellComponents.WALL);
-            }
-        }
+		// Random exit on left edge
+		int randomRow = rand.nextInt(gridSize);
+		for (int i = 0; i < gridSize; i++) {
+			Cell leftCell = rows.get(i).getCells().get(0);
+			if (i == randomRow) {
+				leftCell.setLeft(CellComponents.EXIT);
+			} else {
+				leftCell.setLeft(CellComponents.WALL);
+			}
+		}
 
-        Random rand = new Random();
-        for (int i = 0; i < gridSize; i++) {
-            for (int j = 0; j < gridSize; j++) {
-                Cell cell = allCells.get(i).get(j);
-                boolean hasWall = cell.getLeft() == CellComponents.WALL ||
-                    cell.getRight() == CellComponents.WALL ||
-                    cell.getUp() == CellComponents.WALL ||
-                    cell.getDown() == CellComponents.WALL;
-
-                if (!hasWall) { //this is what randomly chooses where to put the wall if one isn't there already
-                    int side = rand.nextInt(4);
-                    switch (side) {
-                        case 0:
-                            cell.setLeft(CellComponents.WALL);
-                            if (j > 0) allCells.get(i).get(j - 1).setRight(CellComponents.WALL);
-                            break;
-                        case 1:
-                            cell.setRight(CellComponents.WALL);
-                            if (j < gridSize - 1) allCells.get(i).get(j + 1).setLeft(CellComponents.WALL);
-                            break;
-                        case 2:
-                            cell.setUp(CellComponents.WALL);
-                            if (i > 0) allCells.get(i - 1).get(j).setDown(CellComponents.WALL);
-                            break;
-                        case 3:
-                            cell.setDown(CellComponents.WALL);
-                            if (i < gridSize - 1) allCells.get(i + 1).get(j).setUp(CellComponents.WALL);
-                            break;
-                    }
-                }
-            }
-        }
-
-        return new Grid(rows);
-    }
-
+		return new Grid(rows);
+	}
 
     //to string method
 	@Override

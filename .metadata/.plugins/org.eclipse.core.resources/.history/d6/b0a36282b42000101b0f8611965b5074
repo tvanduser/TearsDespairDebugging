@@ -202,7 +202,7 @@ public class Game {
                     cell.getUp() == CellComponents.WALL ||
                     cell.getDown() == CellComponents.WALL;
 
-                if (!hasWall) { //this is what randomly chooses where to put the wall if one isn't there already
+                if (!hasWall) {
                     int side = rand.nextInt(4);
                     switch (side) {
                         case 0:

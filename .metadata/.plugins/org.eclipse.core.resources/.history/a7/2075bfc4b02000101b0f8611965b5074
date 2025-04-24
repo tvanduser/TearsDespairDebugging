@@ -136,7 +136,7 @@ public class Game {
                 //return new position success or fail
                 return movePlayer(player, currentRow, rightCell);
 
-            default: 
+            default:
                 return false;
         }
 	}
@@ -149,32 +149,61 @@ public class Game {
 
 		ArrayList<Row> rows = new ArrayList<>();
 		ArrayList<ArrayList<Cell>> allCells = new ArrayList<>();
+		Random rand = new Random();
 
 		for (int i = 0; i < gridSize; i++) {
 			ArrayList<Cell> rowCells = new ArrayList<>();
 			for (int j = 0; j < gridSize; j++) {
-				// Initialize all sides to WALL as default
 				CellComponents left, right, up, down;
 
-				// Left: wall on far left, else share with previous cell's right
+				// LEFT: share from previous cell's right
 				if (j == 0) {
 					left = CellComponents.WALL;
 				} else {
 					left = rowCells.get(j - 1).getRight();
 				}
 
-				// Up: wall on top row, else share with cell above's down
+				// UP: share from above cell's down
 				if (i == 0) {
 					up = CellComponents.WALL;
 				} else {
 					up = allCells.get(i - 1).get(j).getDown();
 				}
 
-				// Right: wall on far right, else new placeholder (will be shared with next cell's left)
-				right = (j == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
+				// RIGHT: random unless on far right
+				if (j == gridSize - 1) {
+					right = CellComponents.WALL;
+				} else {
+					right = rand.nextBoolean() ? CellComponents.WALL : CellComponents.APERTURE;
+				}
 
-				// Down: wall on bottom, else new placeholder (will be shared with next row's up)
-				down = (i == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
+				// DOWN: random unless on bottom row
+				if (i == gridSize - 1) {
+					down = CellComponents.WALL;
+				} else {
+					down = rand.nextBoolean() ? CellComponents.WALL : CellComponents.APERTURE;
+				}
+
+				// Ensure at least one APERTURE for the cell
+				if (left != CellComponents.APERTURE &&
+					right != CellComponents.APERTURE &&
+					up != CellComponents.APERTURE &&
+					down != CellComponents.APERTURE) {
+					// Open one random direction if not on edge
+					ArrayList<String> directions = new ArrayList<>();
+					if (j > 0) directions.add("left");
+					if (j < gridSize - 1) directions.add("right");
+					if (i > 0) directions.add("up");
+					if (i < gridSize - 1) directions.add("down");
+
+					String openDir = directions.get(rand.nextInt(directions.size()));
+					switch (openDir) {
+						case "left": left = CellComponents.APERTURE; break;
+						case "right": right = CellComponents.APERTURE; break;
+						case "up": up = CellComponents.APERTURE; break;
+						case "down": down = CellComponents.APERTURE; break;
+					}
+				}
 
 				rowCells.add(new Cell(left, right, up, down));
 			}
@@ -182,52 +211,16 @@ public class Game {
 			rows.add(new Row(rowCells));
 		}
 
-        // Add the exit to a random spot on the left
-        int randomRow = new Random().nextInt(gridSize);
-        for (int i = 0; i < gridSize; i++) {
-            Cell leftCell = rows.get(i).getCells().get(0);
-            if (i == randomRow) {
-                leftCell.setLeft(CellComponents.EXIT);
-            } else {
-                leftCell.setLeft(CellComponents.WALL);
-            }
-        }
+		// Add EXIT on a random left edge
+		int randomRow = rand.nextInt(gridSize);
+		for (int i = 0; i < gridSize; i++) {
+			Cell leftCell = rows.get(i).getCells().get(0);
+			leftCell.setLeft(i == randomRow ? CellComponents.EXIT : CellComponents.WALL);
+		}
 
-        Random rand = new Random();
-        for (int i = 0; i < gridSize; i++) {
-            for (int j = 0; j < gridSize; j++) {
-                Cell cell = allCells.get(i).get(j);
-                boolean hasWall = cell.getLeft() == CellComponents.WALL ||
-                    cell.getRight() == CellComponents.WALL ||
-                    cell.getUp() == CellComponents.WALL ||
-                    cell.getDown() == CellComponents.WALL;
-
-                if (!hasWall) { //this is what randomly chooses where to put the wall if one isn't there already
-                    int side = rand.nextInt(4);
-                    switch (side) {
-                        case 0:
-                            cell.setLeft(CellComponents.WALL);
-                            if (j > 0) allCells.get(i).get(j - 1).setRight(CellComponents.WALL);
-                            break;
-                        case 1:
-                            cell.setRight(CellComponents.WALL);
-                            if (j < gridSize - 1) allCells.get(i).get(j + 1).setLeft(CellComponents.WALL);
-                            break;
-                        case 2:
-                            cell.setUp(CellComponents.WALL);
-                            if (i > 0) allCells.get(i - 1).get(j).setDown(CellComponents.WALL);
-                            break;
-                        case 3:
-                            cell.setDown(CellComponents.WALL);
-                            if (i < gridSize - 1) allCells.get(i + 1).get(j).setUp(CellComponents.WALL);
-                            break;
-                    }
-                }
-            }
-        }
-
-        return new Grid(rows);
-    }
+		return new Grid(rows);
+	}
+	``
 
 
     //to string method
