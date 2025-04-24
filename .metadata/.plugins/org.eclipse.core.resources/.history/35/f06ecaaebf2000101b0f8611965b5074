@@ -74,20 +74,6 @@ public class Main {
                     continue;
             }
 
-            
-            
-            if(player.getCurrentCell().getLeft() == CellComponents.EXIT){
-                System.out.println("You are in the exit room, press A to escape!");
-                if(move == Movement.LEFT) {
-                	System.out.println("You escaped! No spankings from Ekin today!!!");
-                	isFree = true;
-                }
-                else {
-                	System.out.println("Idiot, all you had to do was move left");
-                }
-            }
-            
-            
             boolean success = game.play(move, player); //check if the move was possible or if the player hit a wall or if the player escaped
 
             if(success){
@@ -97,7 +83,10 @@ public class Main {
                 invalidMoveMessage();
             }
 
-            
+            if(player.getCurrentCell().getLeft() == CellComponents.EXIT){
+                System.out.println("Congratulations you escaped from Ekin!!!");
+                isFree = true;
+            }
             
         }
 

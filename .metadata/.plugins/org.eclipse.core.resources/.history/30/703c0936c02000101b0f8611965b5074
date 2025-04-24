@@ -74,8 +74,15 @@ public class Main {
                     continue;
             }
 
-            
-            
+            boolean success = game.play(move, player); //check if the move was possible or if the player hit a wall or if the player escaped
+
+            if(success){
+                validMoveMessage();
+            }
+            else{
+                invalidMoveMessage();
+            }
+
             if(player.getCurrentCell().getLeft() == CellComponents.EXIT){
                 System.out.println("You are in the exit room, press A to escape!");
                 if(move == Movement.LEFT) {
@@ -86,18 +93,6 @@ public class Main {
                 	System.out.println("Idiot, all you had to do was move left");
                 }
             }
-            
-            
-            boolean success = game.play(move, player); //check if the move was possible or if the player hit a wall or if the player escaped
-
-            if(success){
-                validMoveMessage();
-            }
-            else{
-                invalidMoveMessage();
-            }
-
-            
             
         }
 
