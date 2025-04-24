@@ -8,7 +8,7 @@ import hw4.maze.CellComponents;
 import hw4.maze.Grid;
 import hw4.maze.Row;
 import hw4.player.Player;
-import hw4.game.Movement;
+import hw4.player.Movement;
 
 public class Game {
 
