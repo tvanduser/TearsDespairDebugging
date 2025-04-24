@@ -11,16 +11,28 @@ import hw4.player.Player;
 
 public class Game {
 
+    //--------------helper functions------------
+    
+    //function to move the player to a new cell on a new row
+    private boolean movePlayer(Player player, Row newRow, Cell newCell){
+        
+        player.setCurrentRow(newRow);
+        player.setCurrentCell(newCell);
+
+        return false;
+    }
+
+
     private Grid grid;
     private Random random;
 
-    //constructor for greating a game
+    //constructor for creating a game where the grid is passed in
 	public Game(Grid grid) {
         this.grid = grid;
         this.random = new Random();
 	}
     
-    //constructor for creating a new game with the grid size specified
+    //constructor for creating a game where there isn't a grid being passed, instead the size of grid is passed in as well as created 
     public Game(int size){
         this.random = new Random();
         if(size >= 3 && size <= 7){
@@ -38,9 +50,92 @@ public class Game {
 	    this.grid = grid;	
 	}
 	
-	public Object play(Object object, Player player) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean play(Movement movement, Player player) {
+        
+        //edge case testing
+        if(movement == null || player == null){
+            return false;
+        }
+
+        //position setting 
+        Row currentRow = player.getCurrentRow();
+        Cell currentCell = player.getCurrentCell();
+        ArrayList<Row> rows = grid.getRows();
+        int rowIndex = rows.indexOf(currentRow);
+        int cellIndex = currentRow.getCells().indexOf(currentCell);
+
+        //checking if moves are possible or not based on what type of edge and the chosen movement;
+        //going to use a switch statement for each type of movement up,down,left,right
+        switch (movement) {
+
+            case UP:
+
+                if(currentCell.getUp() != CellComponents.APERTURE){
+                    return false;
+                }
+
+                if(rowIndex <= 0){
+                    return false; //cant move down if they are already at the bottom row
+                }
+
+                Row upRow = rows.get(rowIndex - 1);
+                Cell upCell = upRow.getCells().get(cellIndex);
+
+
+                return movePlayer(player, upRow, upCell);
+
+            case DOWN:
+
+                if(currentCell.getDown() != CellComponents.APERTURE){
+                    return false;
+                }
+
+                if(rowIndex >= rows.size() - 1){
+                    return false; //cant move down if they are already at the bottom row
+                }
+
+                Row downRow = rows.get(rowIndex + 1);
+                Cell downCell = downRow.getCells().get(cellIndex);
+
+
+                return movePlayer(player, downRow, downCell);
+
+            case LEFT:
+
+                if(currentCell.getLeft() == CellComponents.WALL){ //have to change this compared to the other becuase it can go left on aptr or exit
+                    return false; 
+                }
+                if(cellIndex <= 0){ //this is for when they are trying to move left and on the left side of the screen
+                    //check if exit
+                    if(currentCell.getLeft() == CellComponents.EXIT){
+                        return true;
+                    }
+                }
+                //update position to the left
+                Cell leftCell = currentRow.getCells().get(cellIndex - 1);
+
+                //return new position success or fail
+                return movePlayer(player, currentRow, leftCell);
+
+            case RIGHT:
+
+                if(currentCell.getRight() != CellComponents.APERTURE){
+                    return false;
+                }
+
+                if(rowIndex >= rows.size() - 1){
+                    return false; //cant move down if they are already at the bottom row
+                }
+
+                //update position
+                Cell rightCell = currentRow.getCells().get(cellIndex + 1);
+
+                //return new position success or fail
+                return movePlayer(player, currentRow, rightCell);
+
+            default:
+                return false;
+        }
 	}
 
     //logic to create a random grid
