@@ -23,6 +23,24 @@ public class Game {
         return true;
     }
 
+
+    public void displayGrid(Player player){
+        for(Row row: this.grid.getRows()){
+            for(Cell cell: row.getCells()){
+                if(player.getCurrentCell() == cell){
+                    System.out.print(" A ");
+                }
+                else if(cell.getLeft() == CellComponents.EXIT){
+                    System.out.print(" E ");
+                }
+                else{
+                    System.out.print(" S ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     //------------end of helper functions------------
 
 

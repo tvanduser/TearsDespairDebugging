@@ -1,0 +1,54 @@
+package hw4;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+import hw4.game.Game;
+import hw4.maze.Cell;
+import hw4.maze.CellComponents;
+import hw4.maze.Grid;
+import hw4.maze.Row;
+import hw4.player.Movement;
+import hw4.player.Player;
+
+public class Main {
+
+
+    
+    //---------helper functions------------
+    public static void validMoveMessage(){
+        System.out.println("You didn't hit a wall, keep gonig to find your way out of the maze!!!\nBeware the cave has walls and if you hit them you hurt your head and have to try again... akward...");     
+    }    
+
+    public static void invalidMoveMessage(){
+        System.out.println("You hit a wall, try again bot loser");     
+    }    
+    //---------end of helper functions------------
+    
+
+    private static Game game;
+    private static Grid grid;
+    private static Player player;
+
+
+	public static void main(String[] args) {
+        
+        //intro message
+        game = new Game(4);
+        Row playerRow = game.getGrid().getRows().getLast();
+        Cell PlayerCell = playerRow.getCells().getLast();
+        player = new Player(playerRow, PlayerCell);
+
+        System.out.println("You are stuck in a cave, oops, better get out befor Ekin spanks you");
+        //NEED TO WRAP THIS FUCKER IN A WHILE LOOP
+        game.displayGrid(player);
+        System.out.println("Move using W, A, S, D");    
+
+
+
+
+
+	}
+
+} 
