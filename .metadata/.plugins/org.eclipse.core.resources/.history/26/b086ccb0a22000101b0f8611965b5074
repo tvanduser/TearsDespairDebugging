@@ -8,7 +8,6 @@ import hw4.maze.CellComponents;
 import hw4.maze.Grid;
 import hw4.maze.Row;
 import hw4.player.Player;
-import hw4.game.Movement;
 
 public class Game {
 
@@ -22,8 +21,6 @@ public class Game {
 
         return true;
     }
-
-    //------------end of helper functions------------
 
 
     private Grid grid;
@@ -109,7 +106,7 @@ public class Game {
                     return false; 
                 }
                 if(cellIndex <= 0){ //this is for when they are trying to move left and on the left side of the screen
-
+                    //check if exit
                     if(currentCell.getLeft() == CellComponents.EXIT){
                         return true;
                     }
@@ -143,55 +140,68 @@ public class Game {
 
     //logic to create a random grid
 	public Grid createRandomGrid(int gridSize) {
-		if (gridSize < 3 || gridSize > 7) {
-			return null;
-		}
+        //make sure that the grid size fits within the parameters
+        if(gridSize < 3 || gridSize > 7){
+            return null; //grid size is not valid
+        }
 
-		ArrayList<Row> rows = new ArrayList<>();
-		ArrayList<ArrayList<Cell>> allCells = new ArrayList<>();
+        ArrayList<Row> rows = new ArrayList<>();
 
-		for (int i = 0; i < gridSize; i++) {
-			ArrayList<Cell> rowCells = new ArrayList<>();
-			for (int j = 0; j < gridSize; j++) {
-				// Initialize all sides to WALL as default
-				CellComponents left, right, up, down;
+        //now time to actually create the grid using a double for loop
+        for(int i = 0; i < gridSize; i++){ //create all the rows
+            ArrayList<Cell> cells = new ArrayList<>();
+            for(int j = 0; j < gridSize; j++){ //fill in the colums for each row using cells
+                //logic is as follows --> if it is on the edge the the left, right, up, or down needs to be a wall, otherwise it can be an aperature
+                CellComponents left;
+                if(j == 0){ //this will be on the left side so it needs to be a wall
+                    left = CellComponents.WALL;
+                }
+                else{
+                    left = CellComponents.APERTURE;
+                }
 
-				// Left: wall on far left, else share with previous cell's right
-				if (j == 0) {
-					left = CellComponents.WALL;
-				} else {
-					left = rowCells.get(j - 1).getRight();
-				}
+                //right components
+                CellComponents right;
+                if(j == gridSize - 1){ //this will be on the right side so it needs to be a wall
+                    right = CellComponents.WALL;
+                }
+                else{
+                    right = CellComponents.APERTURE; //anywhere else the right side will be an aperature
+                }
 
-				// Up: wall on top row, else share with cell above's down
-				if (i == 0) {
-					up = CellComponents.WALL;
-				} else {
-					up = allCells.get(i - 1).get(j).getDown();
-				}
+                //up components
+                CellComponents up;
+                if(i == 0){ //this will be on the top so it needs to be a wall
+                    up = CellComponents.WALL;
+                }
+                else{
+                    up = CellComponents.APERTURE; //anywhere else the top side will be an aperature
+                }
 
-				// Right: wall on far right, else new placeholder (will be shared with next cell's left)
-				right = (j == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
+                //down components
+                CellComponents down;
+                if(j == gridSize - 1){ //this will be on the bottom of the grid so they have to be walls
+                    down = CellComponents.WALL;
+                }
+                else{
+                    down = CellComponents.APERTURE; //anywhere elss the down side going to be an aperature
+                }
+                cells.add(new Cell(left, right, up, down));
+            }
+            rows.add(new Row(cells));
+        }
 
-				// Down: wall on bottom, else new placeholder (will be shared with next row's up)
-				down = (i == gridSize - 1) ? CellComponents.WALL : CellComponents.APERTURE;
-
-				rowCells.add(new Cell(left, right, up, down));
-			}
-			allCells.add(rowCells);
-			rows.add(new Row(rowCells));
-		}
-
-		// Add the exit to a random spot on the left
-		int randomRow = new Random().nextInt(gridSize);
-		for (int i = 0; i < gridSize; i++) {
-			Cell leftCell = rows.get(i).getCells().get(0);
-			if (i == randomRow) {
-				leftCell.setLeft(CellComponents.EXIT);
-			} else {
-				leftCell.setLeft(CellComponents.WALL);
-			}
-		}
+        //add the exit to a random spot on the left side of the grid
+        int randomRow = new Random().nextInt(gridSize);
+        for(int i = 0; i < gridSize; i++){
+            Cell leftCell = rows.get(i).getCells().get(0);
+            if(i == randomRow){
+                leftCell.setLeft(CellComponents.EXIT);
+            }
+            else{
+                leftCell.setLeft(CellComponents.WALL); //pretty sure this is redundant since i already made them walls if they are on the left up above
+            }
+        }
 
 		return new Grid(rows);
 	}

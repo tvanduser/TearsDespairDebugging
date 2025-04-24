@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GameTest" project="SP2025_CS3330_HW4_G0" tests="10" started="10" failures="0" errors="2" ignored="0">
+  <testsuite name="hw4.game.test.GameTest" time="0.121" displayname="GameTest" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]">
+    <testcase name="testIfThereIsAnExitOnLeft" classname="hw4.game.test.GameTest" time="0.024" displayname="testIfThereIsAnExitOnLeft()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testIfThereIsAnExitOnLeft()]"/>
+    <testcase name="testInvalidMovement" classname="hw4.game.test.GameTest" time="0.001" displayname="testInvalidMovement()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testInvalidMovement()]"/>
+    <testsuite name="testPlay(hw4.game.test.GameTest)" incomplete="true" displayname="testPlay(boolean, boolean)" parameters="boolean,boolean" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testPlay(boolean, boolean)]">
+      <error>java.lang.Error: Unresolved compilation problems: 
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+	Movement cannot be resolved to a variable
+&#13;
+	at SP2025_CS3330_HW4_G0/hw4.game.test.GameTest.playMovementProvider(GameTest.java:60)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)&#13;
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)&#13;
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)&#13;
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1709)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	Suppressed: org.junit.platform.commons.PreconditionViolationException: Configuration error: You must configure at least one set of arguments for this @ParameterizedTest&#13;
+		at java.base/java.util.stream.AbstractPipeline.close(AbstractPipeline.java:355)&#13;
+		at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:289)&#13;
+		... 9 more&#13;
+&#13;
+</error>
+    </testsuite>
+    <testcase name="testToString" classname="hw4.game.test.GameTest" time="0.011" displayname="testToString()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testToString()]"/>
+    <testcase name="testGetGrid" classname="hw4.game.test.GameTest" time="0.002" displayname="testGetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testGetGrid()]"/>
+    <testsuite name="testInvalidGridSizeInput(hw4.game.test.GameTest)" time="0.008" displayname="testInvalidGridSizeInput(Grid, Grid)" parameters="hw4.maze.Grid,hw4.maze.Grid" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testInvalidGridSizeInput(hw4.maze.Grid, hw4.maze.Grid)]">
+      <testcase name="testInvalidGridSizeInput" classname="hw4.game.test.GameTest" time="0.008" dynamicTest="true" displayname="[1] null, null" parameters="hw4.maze.Grid,hw4.maze.Grid" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testInvalidGridSizeInput(hw4.maze.Grid, hw4.maze.Grid)]/[test-template-invocation:#1]"/>
+      <testcase name="testInvalidGridSizeInput" classname="hw4.game.test.GameTest" time="0.001" dynamicTest="true" displayname="[2] null, null" parameters="hw4.maze.Grid,hw4.maze.Grid" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[test-template:testInvalidGridSizeInput(hw4.maze.Grid, hw4.maze.Grid)]/[test-template-invocation:#2]"/>
+    </testsuite>
+    <testcase name="testAdjacentCellsSharedCellComponentConsistency" classname="hw4.game.test.GameTest" time="0.007" displayname="testAdjacentCellsSharedCellComponentConsistency()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testAdjacentCellsSharedCellComponentConsistency()]"/>
+    <testcase name="testInvalidNullPlayer" classname="hw4.game.test.GameTest" time="0.003" displayname="testInvalidNullPlayer()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testInvalidNullPlayer()]">
+      <error>java.lang.Error: Unresolved compilation problem: 
+	Movement cannot be resolved to a variable
+&#13;
+	at SP2025_CS3330_HW4_G0/hw4.game.test.GameTest.testInvalidNullPlayer(GameTest.java:157)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testSetGrid" classname="hw4.game.test.GameTest" time="0.001" displayname="testSetGrid()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testSetGrid()]"/>
+    <testcase name="testIfThereIsOnlyOneExitOnLeft" classname="hw4.game.test.GameTest" time="0.001" displayname="testIfThereIsOnlyOneExitOnLeft()" uniqueid="[engine:junit-jupiter]/[class:hw4.game.test.GameTest]/[method:testIfThereIsOnlyOneExitOnLeft()]"/>
+  </testsuite>
+</testrun>
